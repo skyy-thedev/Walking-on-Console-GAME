@@ -10,12 +10,12 @@ namespace WalkingGame
     {
         public String Floor { set; get; }
 
-        public Byte Size { set; get; }  
+        public Byte Width { set; get; }  
 
-        public Scene(String floor) 
+        public Scene(String floor, Byte width) 
         {
             this.Floor = floor;
-            this.Size = size;
+            this.Width = width;
         }
 
         public void print(Player p)
@@ -26,7 +26,7 @@ namespace WalkingGame
             // PRINT FIRST LINE //
             if (p.Jumping)
             {
-                for (Byte i = 0; i  p.Position; i++)
+                for (Byte i = 0; i < p.Position; i++)
                 {
                     Console.Write(" ");
                 }
@@ -46,7 +46,7 @@ namespace WalkingGame
             if (p.Jumping) Console.Write(Floor);
             else Console.Write(p.Skin);
 
-            for (Byte i = 0; i < (Size - p.Position); i++)
+            for (Byte i = 0; i < (Width - p.Position); i++)
             {
                 Console.Write(Floor);
             }
